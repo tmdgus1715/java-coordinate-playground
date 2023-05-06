@@ -36,6 +36,7 @@ public class FigureGenerator {
 
     public static void checkDuplicatePoint(List<Point> points) {
         Set<Point> verifier = new HashSet<>(points);
+
         if (verifier.size() != points.size()) {
             throw new DuplicatePointException("중복된 좌표는 허용되지 않습니다.");
         }

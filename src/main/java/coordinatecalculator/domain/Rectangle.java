@@ -37,6 +37,9 @@ public class Rectangle implements Figure {
 
     @Override
     public double getArea() {
-        return 0.0;
+        double line1 = points.get(0).getDistance(points.get(1));
+        double line2 = points.get(0).getDistance(points.get(2));
+
+        return line1 * line2;
     }
 }
