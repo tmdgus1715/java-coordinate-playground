@@ -2,8 +2,11 @@ package coordinatecalculator.domain;
 
 import coordinatecalculator.exception.PointRangeException;
 
+import java.util.Objects;
+
 public class Point {
     public static final String POINT_RANGE_ERROR_MESSAGE = "잘못된 범위의 좌푯값입니다.";
+
     private final int x;
     private final int y;
 
@@ -35,5 +38,10 @@ public class Point {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
