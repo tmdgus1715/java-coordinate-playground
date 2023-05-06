@@ -4,7 +4,7 @@ import coordinatecalculator.exception.PointRangeException;
 
 import java.util.Objects;
 
-public class Point {
+public class Point implements Comparable {
     public static final String POINT_RANGE_ERROR_MESSAGE = "잘못된 범위의 좌푯값입니다.";
 
     private final int x;
@@ -43,5 +43,14 @@ public class Point {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Point p = (Point) o;
+        if (p.getX() == this.x) {
+            return this.y - p.getY();
+        }
+        return this.x - p.getX();
     }
 }
