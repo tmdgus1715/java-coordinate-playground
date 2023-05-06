@@ -66,7 +66,7 @@ public class FigureGeneratorTest {
     @Test
     @DisplayName("좌표가 4개가 주어지더라도 직사각형이 아니면 예외 발생")
     void unable_to_generate_rectangle() {
-        List<Point> points = Arrays.asList(new Point(1, 2), new Point(5, 2), new Point(2, 4), new Point(4, 4));
+        List<Point> points = Arrays.asList(new Point(1, 2), new Point(5, 2), new Point(1, 7), new Point(5, 3));
 
         assertThatThrownBy(() -> FigureGenerator.generate(points)).isInstanceOf(InvalidRectanglePointException.class);
     }

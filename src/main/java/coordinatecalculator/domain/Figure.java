@@ -6,7 +6,5 @@ public interface Figure {
 
     void checkGenerable(List<Point> points);
 
-    void getArea();
-
-
+    double getArea();
 }
