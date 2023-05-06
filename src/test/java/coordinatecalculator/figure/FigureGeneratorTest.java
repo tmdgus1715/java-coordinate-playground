@@ -78,4 +78,12 @@ public class FigureGeneratorTest {
 
         assertThatThrownBy(() -> FigureGenerator.generate(points)).isInstanceOf(DuplicatePointException.class);
     }
+
+    @Test
+    @DisplayName("좌표를 입력하지 않으면 예외 발생")
+    void check_null_point() {
+        List<Point> points = null;
+
+        assertThatThrownBy(() -> FigureGenerator.generate(points)).isInstanceOf(NullPointerException.class);
+    }
 }
