@@ -26,12 +26,17 @@ public class Rectangle implements Figure {
         Point p3 = points.get(2);
         Point p4 = points.get(3);
 
-        boolean line1 = p1.getY() == p3.getY() && p1.getX() != p3.getX();
-        boolean line2 = p2.getY() == p4.getY() && p2.getX() != p4.getX();
-        boolean line3 = p1.getX() == p2.getX() && p1.getY() != p2.getY();
+        boolean line1 = p1.isEqualYAxis(p3) && !p1.isEqualXAxis(p3);
+        boolean line2 = p2.isEqualYAxis(p4) && !p2.isEqualXAxis(p4);
+        boolean line3 = p1.isEqualXAxis(p2) && !p1.isEqualYAxis(p2);
 
         if (!(line1 && line2 && line3)) {
             throw new InvalidRectanglePointException("주어진 좌표로 밑변의 기울기가 0인 직사각형을 만들 수 없습니다.");
         }
+    }
+
+    @Override
+    public double getArea() {
+        return 0.0;
     }
 }

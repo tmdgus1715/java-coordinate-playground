@@ -22,6 +22,18 @@ public class Point implements Comparable {
         }
     }
 
+    public double getDistance(Point p) {
+        return Math.sqrt(Math.pow((p.getX() - this.x), 2) + Math.pow((p.getY() - this.y), 2));
+    }
+
+    public boolean isEqualXAxis(Point p) {
+        return this.x == p.getX();
+    }
+
+    public boolean isEqualYAxis(Point p) {
+        return this.y == p.getY();
+    }
+
     public int getX() {
         return x;
     }
